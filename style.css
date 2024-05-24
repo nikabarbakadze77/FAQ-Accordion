@@ -1,0 +1,137 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-pink: hsl(275, 100%, 97%);
+    --grayish-purple: #8c6991;
+    --dark-purple: #2f1533;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    background-color: var(--light-pink);
+
+}
+
+body img.body-image {
+    width: 100%;
+    position: absolute;
+    object-fit: contain;
+    top: 0;
+}
+
+body img.body-image.mobile {
+    display: none;
+}
+
+.faq {
+    position: relative;
+    z-index: 99;
+    background-color: var(--white);
+    max-width: 650px;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    -webkit-box-shadow: -1px 36px 85px -8px rgba(140,105,145,0.43);
+    -moz-box-shadow: -1px 36px 85px -8px rgba(140,105,145,0.43);
+    box-shadow: -1px 36px 85px -8px rgba(140,105,145,0.43);
+}
+
+.faq h2 {
+    font-size: 40px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.faq .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.faq .faq-list .faq-item {
+    padding-bottom: 24px;
+}
+
+.faq .faq-list .faq-item:not(:last-child) {
+    border-bottom: 1px solid var(--light-pink);
+
+}
+
+.faq .faq-list .faq-item .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.faq .faq-list .faq-item .faq-question h4 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.faq .faq-list .faq-item .faq-question img.minus {
+    display: none;
+}
+
+
+
+.faq .faq-list .faq-item .faq-answer {
+    overflow: hidden;
+    max-height: 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+.faq .faq-list .faq-item.open .faq-question img {
+    display: none;
+}
+
+.faq .faq-list .faq-item.open .faq-question img.minus {
+    display: block;
+}
+
+.faq .faq-list .faq-item.open .faq-question {
+    margin-bottom: 20px;
+}
+
+
+.faq .faq-list .faq-item.open .faq-answer {
+    max-height: 500px;
+}
+
+
+@media screen and (max-width: 680px) {
+    body {
+        padding: 30px;
+        height: 100%;
+    }
+    body img.body-image {
+        display: none;
+    }
+    
+    body img.body-image.mobile {
+        display: block;
+    }
+    
+}
